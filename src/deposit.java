@@ -30,18 +30,7 @@ public class deposit extends javax.swing.JFrame {
      */
     static Socket so;
     static String acc;
-    public deposit() {
-        initComponents();
-        try { 
-        so=new Socket("localhost", 4444);
-        
-    } catch (IOException ex) {
-        Logger.getLogger(balance.class.getName()).log(Level.SEVERE, null, ex);
-    }
-        this.acc="abc";
-        t2.setText(acc);
-    }
-//    public deposit(String acc) {
+//    public deposit() {
 //        initComponents();
 //        try { 
 //        so=new Socket("localhost", 4444);
@@ -49,12 +38,23 @@ public class deposit extends javax.swing.JFrame {
 //    } catch (IOException ex) {
 //        Logger.getLogger(balance.class.getName()).log(Level.SEVERE, null, ex);
 //    }
-//        this.acc=acc;
+//        this.acc="abc";
 //        t2.setText(acc);
 //    }
-//    public deposit() {
-//        initComponents();
-//    }
+    public deposit(String acc) {
+        initComponents();
+        try { 
+        so=new Socket("localhost", 4444);
+        
+    } catch (IOException ex) {
+        Logger.getLogger(balance.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        this.acc=acc;
+        t2.setText(acc);
+    }
+    public deposit() {
+        initComponents();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

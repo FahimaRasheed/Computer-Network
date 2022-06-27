@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 public class balance extends javax.swing.JFrame {
 static Socket so;
-static String aacno;    
+public static String aacno;    
 public balance(String accno) {
         initComponents();
     try { 
@@ -25,11 +25,13 @@ public balance(String accno) {
         Logger.getLogger(balance.class.getName()).log(Level.SEVERE, null, ex);
     }
     this.aacno=accno;
-        tb1.setText(accno);
+        tb1.setText(aacno);
         tb1.setEditable(false);
         tb2.setEditable(false);
     }
-
+public balance() {
+        initComponents();
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -151,25 +153,30 @@ public balance(String accno) {
 
         try
         {
-         
+            
+        
         PrintStream ps;
         String str;
-        //System.out.println("Enter the Radius :");
+        
         String balance;
         BufferedReader buffr=new BufferedReader(new InputStreamReader(so.getInputStream()));
         ps=new PrintStream(so.getOutputStream());
         ps.println(tb1.getText()+" 3 0");
-     //   buffr=new BufferedReader(new InputStreamReader();
+    
         balance= buffr.readLine();
-       // tb2.setText("abc");
-        tb2.setText(balance);
+            System.out.println(" "+balance);
+        JOptionPane.showMessageDialog(null, " inside try block "+balance);
+       tb2.setText(balance);
+       
         so.close();
        buffr.close();
        ps.close();
        
        b1.setVisible(false);
+               
 
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) {
         Logger.getLogger(balance.class.getName()).log(Level.SEVERE, null, ex);
     }
         
@@ -209,15 +216,24 @@ public balance(String accno) {
             java.util.logging.Logger.getLogger(balance.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+//System.out.println(" balance .java");
 
+//System.out.println(balance.aacno);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {                
-              //new balance(aacno).setVisible(true);
+            public void run() {  
+                //String acc_no;
+               // acc_no=balance.aacno;
+               // JOptionPane.showMessageDialog(null,"hy ");
+               // JOptionPane.showMessageDialog(null," balance ");
+               
               new balance("12345").setVisible(true);
-                
+            //  new balance("12345").setVisible(true);
+              //new balance("12345").setVisible(true);
+                //JOptionPane.showMessageDialog(null,"hiiiiii "+aacno);
             }
-        });
+
+                    });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

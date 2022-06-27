@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 public class details extends javax.swing.JFrame {
 
     /**
@@ -177,6 +180,7 @@ public class details extends javax.swing.JFrame {
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
         // TODO add your handling code here:
+      //  JOptionPane.showMessageDialog(null, " details "+this.acc);
         new deposit(this.acc).setVisible(true);
         setVisible(false);
         dispose();
@@ -187,10 +191,12 @@ public class details extends javax.swing.JFrame {
         new welcome().setVisible(true);
         setVisible(false);
         dispose();
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "detailss.java"+this.acc);
         new balance(this.acc).setVisible(true);
         setVisible(false);
         dispose();
